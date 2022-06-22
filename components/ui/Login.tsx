@@ -8,11 +8,7 @@ const Login = () => {
     signInSuccessUrl: "/dashboard",
     tosUrl: "/terms-of-service",
     privacyPolicyUrl: "/privacy-policy",
-    signInOptions: [
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.GithubAuthProvider.PROVIDER_ID,
-      firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    ],
+    signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
   };
 
   const loadFirebaseui = useCallback(async () => {
