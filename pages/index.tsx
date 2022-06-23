@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   };
 
   const loadFirebaseui = useCallback(async () => {
-    const firebaseui = await import("./npm__es");
+    const firebaseui = await import("../config/npm__es");
     const firebaseUi =
       firebaseui.auth.AuthUI.getInstance() ||
       new firebaseui.auth.AuthUI(firebase.auth());
