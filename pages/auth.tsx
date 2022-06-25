@@ -1,12 +1,14 @@
 import type { NextPage } from "next";
-import { BaseLayout } from "../components/layout";
 import React, { useCallback, useEffect } from "react";
+import { BaseLayout } from "../components/layout";
+
 import "firebaseui/dist/firebaseui.css";
 import { firebase } from "../firebase";
+
 const Home: NextPage = () => {
   var uiConfig = {
     signInFlow: "popup",
-    signInSuccessUrl: "/dashboard",
+    signInSuccessUrl: "/",
     tosUrl: "/terms-of-service",
     privacyPolicyUrl: "/privacy-policy",
     signInOptions: [
@@ -17,7 +19,7 @@ const Home: NextPage = () => {
   };
 
   const loadFirebaseui = useCallback(async () => {
-    const firebaseui = await import("../config/npm__es");
+    const firebaseui = await import("firebaseui");
     const firebaseUi =
       firebaseui.auth.AuthUI.getInstance() ||
       new firebaseui.auth.AuthUI(firebase.auth());
@@ -29,7 +31,7 @@ const Home: NextPage = () => {
   }, []);
   return (
     <BaseLayout>
-      <div id="firebaseui-auth-container"></div>;
+      <div id="firebaseui-auth-container"></div>
     </BaseLayout>
   );
 };
