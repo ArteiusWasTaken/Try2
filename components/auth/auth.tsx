@@ -1,11 +1,14 @@
 import type { NextPage } from "next";
 import React, { useCallback, useEffect } from "react";
-import { BaseLayout } from "../components/layout";
-
+import { BaseLayout } from "../layout";
+import { Box, Typography } from "@mui/material";
 import "firebaseui/dist/firebaseui.css";
-import { firebase } from "../firebase";
 
-const Home: NextPage = () => {
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+
+export const Authorization: NextPage = () => {
   var uiConfig = {
     signInFlow: "popup",
     signInSuccessUrl: "/",
@@ -31,9 +34,11 @@ const Home: NextPage = () => {
   }, []);
   return (
     <BaseLayout>
+      <Box sx={{ textAlign: "center" }}>
+        <Typography variant="h1">PiñaLogin</Typography>
+        <Typography variant="h3">Ingresa con tu cuenta</Typography>
+      </Box>
       <div id="firebaseui-auth-container"></div>
     </BaseLayout>
   );
 };
-
-export default Home;

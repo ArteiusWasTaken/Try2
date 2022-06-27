@@ -1,0 +1,13 @@
+.f-box{
+    display: flex;
+}
+
+.boxsx {
+    flex-direction: row
+}
+
+@media (max-width:599px) {
+    .boxsx{
+        flex-direction: column
+    }
+}

@@ -29,9 +29,11 @@ export const BaseLayout: FC<Props> = ({
       <Sidebar />
       <main
         style={{
-          margin: "80px auto",
-          maxWidth: "1440px",
-          padding: "0px 30px",
+          maxWidth: "320px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         {children}
