@@ -10,7 +10,7 @@ interface Props {
 
 export const CenterLayout: FC<Props> = ({
   title = "PiñaLogin",
-  pageDescription = "Pizza en la piña?",
+  pageDescription = "Piña en la Pizza?",
   children,
 }) => {
   return (
