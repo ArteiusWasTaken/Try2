@@ -2,13 +2,7 @@ import type { NextPage } from "next";
 import { CenterLayout } from "../components/layout";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import {
-  addDoc,
-  getFirestore,
-  collection,
-  setDoc,
-  doc,
-} from "firebase/firestore";
+import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 
 import firebase from "firebase/compat/app";
@@ -25,7 +19,6 @@ import { Authorization } from "../components/auth";
 import VoterList from "../components/ui/VoterList";
 
 const Home: NextPage = () => {
-  const dd = firebase.firestore();
   const [user, loading, error] = useAuthState(firebase.auth() as any);
   console.log("Loading:", loading, "|", "Current user:", user);
 
@@ -36,12 +29,10 @@ const Home: NextPage = () => {
     votes.docs.map((doc) => console.log(doc.data()));
   }
   const addVoteDocument = async (vote: string) => {
-    // await setDoc(doc(dd, "votes", user?.uid), {
-    //   vote,
-    // });
     const citiesRef = collection(db, "votes");
-    await Promise.all([setDoc(doc(citiesRef, user?.uid), { vote })]);
+    await setDoc(doc(citiesRef, user?.uid), { vote });
   };
+
   return (
     <CenterLayout>
       {loading && <Typography variant="h4">Loading...</Typography>}

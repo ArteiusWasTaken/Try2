@@ -7,6 +7,11 @@ import "firebaseui/dist/firebaseui.css";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import { db, firebaseConfig } from "../../config";
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 export const Authorization: NextPage = () => {
   var uiConfig = {
