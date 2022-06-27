@@ -31,29 +31,29 @@ interface MenuItem {
 const menuItems: MenuData = {
   items: [
     {
-      name: "Research Task",
+      name: "Todo",
       icon: <TravelExploreOutlinedIcon />,
       link: "/",
     },
     {
-      name: "Side Missions",
+      name: "Esto",
       icon: <AltRouteOutlinedIcon />,
-      link: "/side-missions",
+      link: "/side",
     },
     {
-      name: "Unown Maps",
+      name: "todavía",
       icon: <NotListedLocationOutlinedIcon />,
-      link: "/unown-maps",
+      link: "/unown",
     },
     {
-      name: "Wisp Maps",
+      name: "No",
       icon: <LocalFireDepartmentOutlinedIcon />,
-      link: "/wisp-maps",
+      link: "/wisp",
     },
     {
-      name: "Old Verse Maps",
+      name: "Funcionas",
       icon: <ArticleOutlinedIcon />,
-      link: "/old-verse-maps",
+      link: "/old",
     },
   ],
 };

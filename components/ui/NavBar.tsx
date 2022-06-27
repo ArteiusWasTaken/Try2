@@ -18,8 +18,8 @@ export const Navbar = () => {
       <Toolbar>
         <NextLink href="/" passHref>
           <Link display="flex" alignItems="center">
-            <Typography variant="h6">Pokémon Legends Arceus |</Typography>
-            <Typography sx={{ ml: 0.5 }}>Research Dex</Typography>
+            <Typography variant="h6">Piña en la pizza |</Typography>
+            <Typography sx={{ ml: 0.5 }}>Yay or nay?</Typography>
           </Link>
         </NextLink>
 
