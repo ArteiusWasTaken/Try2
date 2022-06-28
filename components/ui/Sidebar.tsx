@@ -1,22 +1,21 @@
 import { useContext } from "react";
 import {
   Box,
-  Link,
   Drawer,
   List,
-  ListItem,
   ListItemIcon,
   ListItemText,
   Typography,
   ListItemButton,
+  Divider,
 } from "@mui/material";
 import TravelExploreOutlinedIcon from "@mui/icons-material/TravelExploreOutlined";
 import AltRouteOutlinedIcon from "@mui/icons-material/AltRouteOutlined";
 import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
 import NotListedLocationOutlinedIcon from "@mui/icons-material/NotListedLocationOutlined";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import NextLink from "next/link";
+import PowerSettingsNewOutlinedIcon from "@mui/icons-material/PowerSettingsNewOutlined";
 import { UIContext } from "../../context/ui";
+import SignOut from "../../utils/SignOut";
 
 interface MenuData {
   items: MenuItem[];
@@ -50,11 +49,6 @@ const menuItems: MenuData = {
       icon: <LocalFireDepartmentOutlinedIcon />,
       link: "/wisp",
     },
-    {
-      name: "Funcionas",
-      icon: <ArticleOutlinedIcon />,
-      link: "/old",
-    },
   ],
 };
 
@@ -77,6 +71,13 @@ export const Sidebar = () => {
               <ListItemText primary={el.name} />
             </ListItemButton>
           ))}
+          <Divider />
+          <ListItemButton onClick={SignOut}>
+            <ListItemIcon>
+              <PowerSettingsNewOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText>Salir</ListItemText>
+          </ListItemButton>
         </List>
       </Box>
     </Drawer>

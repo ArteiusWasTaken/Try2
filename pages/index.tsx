@@ -14,20 +14,17 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import { Authorization } from "../components/auth";
 import VoterList from "../components/ui/VoterList";
 
 const Home: NextPage = () => {
   const [user, loading, error] = useAuthState(firebase.auth() as any);
-  console.log("Loading:", loading, "|", "Current user:", user);
 
   const [votes, votesLoading, votesError] = useCollection(
     collection(getFirestore(firebase.app()), "votes")
   );
-  if (!votesLoading && votes) {
-    votes.docs.map((doc) => console.log(doc.data()));
-  }
+
   const addVoteDocument = async (vote: string) => {
     const citiesRef = collection(db, "votes");
     await setDoc(doc(citiesRef, user?.uid), { vote });
@@ -35,7 +32,7 @@ const Home: NextPage = () => {
 
   return (
     <CenterLayout>
-      {loading && <Typography variant="h4">Loading...</Typography>}
+      {loading && <CircularProgress />}
       {!user && <Authorization />}
       {user && (
         <>

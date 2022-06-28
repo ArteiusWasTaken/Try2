@@ -1,4 +1,4 @@
-import { Typography, Box, Avatar } from "@mui/material";
+import { Typography, Box, Avatar, CircularProgress } from "@mui/material";
 import { doc, getFirestore } from "firebase/firestore";
 import React, { ReactElement } from "react";
 import { useDocument } from "react-firebase-hooks/firestore";
@@ -15,7 +15,7 @@ const VoterList = ({ id, vote }: Props) => {
   );
 
   if (loading) {
-    return <Typography variant="h6">Loading...</Typography>;
+    return <CircularProgress />;
   }
 
   if (error) {
