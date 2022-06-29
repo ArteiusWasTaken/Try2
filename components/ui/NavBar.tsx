@@ -24,7 +24,6 @@ export const Navbar = () => {
         </NextLink>
 
         <Box flex={1} />
-
         <Box flex={1} />
 
         <IconButton onClick={openSideMenu}>
