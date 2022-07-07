@@ -4,9 +4,9 @@ export default function SignOut() {
   const auth = getAuth();
   signOut(auth)
     .then(() => {
-      // Sign-out successful.
+      // success
     })
     .catch((error) => {
-      // An error happened.
+      // error
     });
 }

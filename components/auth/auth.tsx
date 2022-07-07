@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import React, { useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { BaseLayout } from "../layout";
 import { Box, Typography } from "@mui/material";
 import "firebaseui/dist/firebaseui.css";

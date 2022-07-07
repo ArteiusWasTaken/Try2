@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { UIContext } from "../../context/ui";
+import ThemeUpdater from "../ThemeUpdater";
 
 export const Navbar = () => {
   const { openSideMenu } = useContext(UIContext);
@@ -24,6 +25,7 @@ export const Navbar = () => {
         </NextLink>
 
         <Box flex={1} />
+        <ThemeUpdater />
         <Box flex={1} />
 
         <IconButton onClick={openSideMenu}>

@@ -1,10 +1,9 @@
-import { ThemeOptions } from "@mui/material";
+import { createTheme } from "@mui/material";
 
-export const lightTheme: ThemeOptions = {
+export const darkTheme = createTheme({
   palette: {
-    mode: "light",
+    mode: "dark",
   },
-
   components: {
     MuiLink: {
       defaultProps: {
@@ -61,4 +60,4 @@ export const lightTheme: ThemeOptions = {
       },
     },
   },
-};
+});
