@@ -8,6 +8,7 @@ import {
   Typography,
   ListItemButton,
   Divider,
+  IconButton,
 } from "@mui/material";
 import TravelExploreOutlinedIcon from "@mui/icons-material/TravelExploreOutlined";
 import AltRouteOutlinedIcon from "@mui/icons-material/AltRouteOutlined";
@@ -16,6 +17,7 @@ import NotListedLocationOutlinedIcon from "@mui/icons-material/NotListedLocation
 import PowerSettingsNewOutlinedIcon from "@mui/icons-material/PowerSettingsNewOutlined";
 import { UIContext } from "../../context/ui";
 import SignOut from "../../utils/SignOut";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 interface MenuData {
   items: MenuItem[];
@@ -56,12 +58,18 @@ export const Sidebar = () => {
   const { sidemenuOpen, closeSideMenu } = useContext(UIContext);
 
   return (
-    <Drawer anchor="right" open={sidemenuOpen} onClose={closeSideMenu}>
+    <Drawer anchor="left" open={sidemenuOpen} onClose={closeSideMenu}>
       <Box sx={{ width: 250 }}>
         <Box sx={{ padding: "5px 10px" }}>
-          <Typography variant="h4" textAlign="center">
-            Menu
-          </Typography>
+          <IconButton
+            onClick={closeSideMenu}
+            sx={{ "&:hover": { backgroundColor: "transparent" } }}
+          >
+            <MenuOutlinedIcon />
+            <Typography variant="h4" textAlign="center">
+              &nbsp;Menu
+            </Typography>
+          </IconButton>
         </Box>
 
         <List>

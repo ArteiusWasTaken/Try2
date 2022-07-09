@@ -1,3 +1,4 @@
 export * from "./NavBar";
 export * from "./Sidebar";
-export * from "./SwitchModeButton";
+export * from "./Sidebar";
+export * from "./UserBar";

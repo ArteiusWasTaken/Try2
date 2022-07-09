@@ -9,8 +9,8 @@ interface Props {
 }
 
 export const CenterLayout: FC<Props> = ({
-  title = "PiñaLogin",
-  pageDescription = "Piña en la Pizza?",
+  title = "Tecniasoft",
+  pageDescription = "Cursos",
   children,
 }) => {
   return (
@@ -36,8 +36,6 @@ export const CenterLayout: FC<Props> = ({
           justifyContent: "center",
           flexDirection: "column",
           gridGap: 8,
-          background:
-            "linear-gradient(180deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
         }}
       >
         {children}

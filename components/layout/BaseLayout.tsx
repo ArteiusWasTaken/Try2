@@ -9,8 +9,8 @@ interface Props {
 }
 
 export const BaseLayout: FC<Props> = ({
-  title = "PiñaLogin",
-  pageDescription = "Piña en la pizza?",
+  title = "Tecniasoft",
+  pageDescription = "Cursos",
   children,
 }) => {
   return (
