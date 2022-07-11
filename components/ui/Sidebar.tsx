@@ -14,9 +14,7 @@ import TravelExploreOutlinedIcon from "@mui/icons-material/TravelExploreOutlined
 import AltRouteOutlinedIcon from "@mui/icons-material/AltRouteOutlined";
 import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
 import NotListedLocationOutlinedIcon from "@mui/icons-material/NotListedLocationOutlined";
-import PowerSettingsNewOutlinedIcon from "@mui/icons-material/PowerSettingsNewOutlined";
 import { UIContext } from "../../context/ui";
-import SignOut from "../../utils/SignOut";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 interface MenuData {
@@ -79,13 +77,6 @@ export const Sidebar = () => {
               <ListItemText primary={el.name} />
             </ListItemButton>
           ))}
-          <Divider />
-          <ListItemButton onClick={SignOut}>
-            <ListItemIcon>
-              <PowerSettingsNewOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText>Salir</ListItemText>
-          </ListItemButton>
         </List>
       </Box>
     </Drawer>

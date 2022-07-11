@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from "react";
-import { Button, css } from "@mui/material";
+import { css, ListItemButton, ListItemIcon } from "@mui/material";
 import { useTheme } from "next-themes";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 const ThemeUpdater: FC<{}> = () => {
-  const { theme, resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -20,25 +20,14 @@ const ThemeUpdater: FC<{}> = () => {
     );
 
   return (
-    <div
-      css={css`
-        display: grid;
-        grid-gap: 8px;
-      `}
+    <ListItemButton
+      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
     >
-      <Button
-        css={css`
-          background: linear-gradient(to top right, #2a48f3 0%, #c32cc2 100%);
-        `}
-        variant="contained"
-        endIcon={
-          resolvedTheme === "light" ? <DarkModeIcon /> : <LightModeIcon />
-        }
-        onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
-      >
-        Toggle {resolvedTheme === "light" ? "dark" : "light"} mode
-      </Button>
-    </div>
+      <ListItemIcon>
+        {resolvedTheme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+      </ListItemIcon>
+      Modo {resolvedTheme === "light" ? "Oscuro" : "Claro"}
+    </ListItemButton>
   );
 };
 

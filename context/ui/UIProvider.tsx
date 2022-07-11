@@ -3,6 +3,7 @@ import { UIContext, uiReducer } from "./";
 
 export interface UIState {
   sidemenuOpen: boolean;
+  usermenuOpen: boolean;
 }
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 
 const UI_INITIAL_STATE: UIState = {
   sidemenuOpen: false,
+  usermenuOpen: false,
 };
 
 export const UIProvider: FC<Props> = ({ children }) => {
@@ -22,6 +24,11 @@ export const UIProvider: FC<Props> = ({ children }) => {
 
   const closeSideMenu = () => dispatch({ type: "UI - Close Sidebar" });
 
+  const closeUserMenu = () => dispatch({ type: "UI - Close UserMenu" });
+
+  const openUserMenu = () => {
+    dispatch({ type: "UI - Open UserMenu" });
+  };
   return (
     <UIContext.Provider
       value={{
@@ -30,6 +37,8 @@ export const UIProvider: FC<Props> = ({ children }) => {
         // Methods
         closeSideMenu,
         openSideMenu,
+        closeUserMenu,
+        openUserMenu,
       }}
     >
       {children}
